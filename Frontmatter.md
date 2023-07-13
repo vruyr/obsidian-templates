@@ -1,4 +1,7 @@
+<%*
+tR += `---
+aliases: [${tp.file.cursor()}]
+tags: [${tp.file.cursor()}]
 ---
-aliases: [<%tp.file.cursor()%>]
-tags: [<%tp.file.cursor()%>]
----
+`
+_%>
