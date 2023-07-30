@@ -53,5 +53,3 @@ await dv.view("Views/Book Info");
 ## Notes
 
 Origin::
-Started Reading::
-Finished Reading::
