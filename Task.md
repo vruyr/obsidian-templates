@@ -1,0 +1,11 @@
+- [ ] <% tp.file.cursor() %>
+	- (Metadata)
+		- <% tp.file.include("[[Templates/Dataview Inline Field Added]]") %>
+		- <% tp.file.include("[[Templates/Dataview Inline Field Due]]") %>
+	- (Details)
+		- <% tp.file.cursor() %>
+	- (Resources)
+		- <% tp.file.cursor() %>
+	- (Resolutions)
+		- <% tp.file.cursor() %>
+	- [ ] <% tp.file.cursor() %>
