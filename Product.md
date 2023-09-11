@@ -8,9 +8,9 @@ added: <%tp.date.now("YYYY-MM-DD[T]HH:mm:ssZ")%>
 
 ## Product Info
 
+Product Page:: <%tp.file.cursor()%>
 Model Number:: <%tp.file.cursor()%>
 Origin:: <%tp.file.cursor()%>
-Product Page:: <%tp.file.cursor()%>
 
 ## Price History
 
