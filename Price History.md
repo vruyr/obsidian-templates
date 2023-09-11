@@ -6,8 +6,8 @@ const stores = {
 	"<%tp.file.cursor(0)%>": "<%tp.file.cursor()%>",
 }
 
-const priceHistory_DatePriceStoreSeller = [
-	["<%tp.date.now("YYYY-MM-DD")%>", <%tp.file.cursor()%>, "<%tp.file.cursor(0)%>", null<%tp.file.cursor()%>],
+const priceHistory_DatePriceStoreSellerComment = [
+	["<%tp.date.now("YYYY-MM-DD")%>", <%tp.file.cursor()%>, "<%tp.file.cursor(0)%>", null, null],
 ]
 
 /********** Rendering **********/
@@ -21,9 +21,9 @@ const dollarFormatter = new Intl.NumberFormat('en-US', {
 
 dv.paragraph("Price History");
 dv.table(
-	["Date", "Price", "Store", "Seller"],
-	priceHistory_DatePriceStoreSeller.map(([date, price, store, seller]) => (
-		[dv.date(date), dollarFormatter.format(price), `[${store}](${stores[store]})`, seller]
+	["Date", "Price", "Store", "Seller", "Comment"],
+	priceHistory_DatePriceStoreSellerComment.map(([date, price, store, seller, comment]) => (
+		[dv.date(date), dollarFormatter.format(price), `[${store}](${stores[store]})`, seller, comment]
 	))
 )
 
