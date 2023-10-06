@@ -1,1 +1,1 @@
-[published::<%tp.date.now("YYYY-MM-DD[T]HH:mm:ssZ")%>]<%_""_%>
+[published::<%tp.file.cursor()%>]<%_""_%>
