@@ -23,6 +23,12 @@ tR += "---";
 await dv.view("Views/References");
 ```
 
+## Pending
+
+```dataviewjs
+await dv.view("Views/Pending Tasks in Daily Notes");
+```
+
 ## Notes
 
 <%_ "\n\n" _%>
