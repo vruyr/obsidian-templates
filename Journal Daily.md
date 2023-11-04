@@ -17,11 +17,9 @@ tR += "---";
 
 <%tp.file.cursor()%>
 
-## References
+## Notes
 
-```dataviewjs
-await dv.view("Views/References");
-```
+<%_ "\n\n" _%>
 
 ## Pending
 
@@ -29,6 +27,9 @@ await dv.view("Views/References");
 await dv.view("Views/Pending Tasks in Daily Notes");
 ```
 
-## Notes
+## References
 
-<%_ "\n\n" _%>
+```dataviewjs
+await dv.view("Views/References");
+```
+
