@@ -12,18 +12,24 @@ const priceHistory_DatePriceStoreSellerComment = [
 
 /********** Rendering **********/
 
-const dollarFormatter = new Intl.NumberFormat('en-US', {
+const _dollarFormatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	currency: 'USD',
 	minimumFractionDigits: 2,
 	maximumFractionDigits: 2,
 });
+function dollarFormatter(n) {
+	if(n == null) {
+		return null;
+	}
+	return _dollarFormatter.format(n);
+}
 
 dv.paragraph("Price History");
 dv.table(
 	["Date", "Price", "Store", "Seller", "Comment"],
 	priceHistory_DatePriceStoreSellerComment.map(([date, price, store, seller, comment]) => (
-		[dv.date(date), dollarFormatter.format(price), `[${store}](${stores[store]})`, seller, comment]
+		[dv.date(date), dollarFormatter(price), `[${store}](${stores[store]})`, seller, comment]
 	))
 )
 
