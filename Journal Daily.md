@@ -13,6 +13,10 @@ tR += `timecreated: ${tp.date.now("YYYY-MM-DD[T]HH:mm:ssZ")}\n`;
 tR += "---";
 %>
 
+```dataviewjs
+await dv.view("Views/Views in Daily Notes");
+```
+
 ## Objectives
 
 <%tp.file.cursor()%>
@@ -20,16 +24,3 @@ tR += "---";
 ## Notes
 
 <%_ "\n\n" _%>
-
-## Pending
-
-```dataviewjs
-await dv.view("Views/Pending Tasks in Daily Notes");
-```
-
-## References
-
-```dataviewjs
-await dv.view("Views/References");
-```
-
