@@ -4,7 +4,7 @@ if(
 	/^\d{4}-\d{2}-\d{2}$/.test(tp.file.title) && 
 	tp.file.title === tp.date.now("YYYY-MM-DD")
 ) {
-	result = `${await tp.file.include("[[Templates/Naive Time]]")} `;
+	result = `(time::${await tp.file.include("[[Templates/Naive Time]]")}) `;
 } else {
 	result = `(date::${await tp.file.include("[[Templates/Timestamp]]")}) `
 }
