@@ -9,7 +9,11 @@ const lib = (new Function(
 );
 
 const currentPage = dv.page(tp.file.path(true));
-const bookTotalPages = lib.getProgressLogs(currentPage).last.last.total;
+const progressLogs = lib.getProgressLogs(currentPage);
+let bookTotalPages = progressLogs.last?.last?.total ?? 0;
+if(!bookTotalPages) {
+	bookTotalPages = await tp.system.prompt(`Number of Pages`, null, false, false);
+}
 const input = await tp.system.prompt(`Page ? of ${bookTotalPages}`, null, false, false);
 
 if(input && input.trim()) {
