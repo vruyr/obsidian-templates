@@ -1,14 +1,18 @@
-<%* 
-let result;
+<%*
+const nldates = await app.plugins.getPlugin("nldates-obsidian");
+const theTimestamp = nldates.parseTime((await tp.file.selection()) || "now");
+
 if(
-	/^\d{4}-\d{2}-\d{2}$/.test(tp.file.title) && 
-	tp.file.title === tp.date.now("YYYY-MM-DD")
+	// If this is a daily journal page for the same date as the timestamp.
+	/^\d{4}-\d{2}-\d{2}$/.test(tp.file.title) &&
+	tp.file.title === theTimestamp.moment.format("YYYY-MM-DD")
 ) {
-	result = `(time::${await tp.file.include("[[Templates/Naive Time]]")}) `;
+	tR = `(time::${theTimestamp.moment.format("HH:mm:ss")})`;
 } else {
-	result = `(date::${await tp.file.include("[[Templates/Timestamp]]")}) `
+	tR = `(date::${theTimestamp.moment.format("YYYY-MM-DD[T]HH:mm:ssZ")})`;
 }
-tR = result;
+
+tR += " ";
 
 /*TODO Use tp.obsidian to inspect where the cursor is and insert the log entry in the correct place.
  *
@@ -17,7 +21,5 @@ tR = result;
  * - If the cursor is at line with only indentation and a bullet symbol, don't add another one.
  * - If the cursor is in the middle of text, add the bullet on the next line with same indentation.
  * - If the cursor is at an empty line, insert the bullet on current line.
- * - If the current file is a Daily Journal file, prepend with time.
- * - If the current file is not a Daily Journal file, prepend with a (date::)
  */
 _%>
