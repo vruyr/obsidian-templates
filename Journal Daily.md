@@ -21,10 +21,6 @@ tR += "---";
 await dv.view("Views/Views in Daily Notes");
 ```
 
-## Objectives
-
-<%tp.file.cursor()%>
-
 ## Notes
 
 <%_ "\n\n" _%>
