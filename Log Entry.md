@@ -9,7 +9,13 @@ if(
 ) {
 	tR = `(time::${theTimestamp.moment.format("HH:mm:ss")})`;
 } else {
-	tR = `(date::${theTimestamp.moment.format("YYYY-MM-DD[T]HH:mm:ssZ")})`;
+	let datetimeFormat = "YYYY-MM-DD[T]HH:mm:ssZ";
+	const timePart = theTimestamp.moment.format("HH:mm:ss");
+	if(timePart === "12:00:00" || timePart === "00:00:00") {
+		// For some reason nldates set the time to noon by default.
+		datetimeFormat = "YYYY-MM-DD";
+	}
+	tR = `(date::${theTimestamp.moment.format(datetimeFormat)})`;
 }
 
 tR += " ";
