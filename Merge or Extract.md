@@ -1,2 +1,1 @@
-## Merged From: {{fromTitle}}
 {{content}}
