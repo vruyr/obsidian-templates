@@ -5,7 +5,7 @@ const theTimestamp = nldates.parseTime((await tp.file.selection()) || "now");
 if(
 	// If this is a daily journal page for the same date as the timestamp.
 	/^\d{4}-\d{2}-\d{2}$/.test(tp.file.title) &&
-	tp.file.title === theTimestamp.moment.format("YYYY-MM-DD")
+	tp.file.title === theTimestamp.moment.format("YYYY-MM-DD") && false
 ) {
 	tR = `(time::${theTimestamp.moment.format("HH:mm:ss")})`;
 } else {
