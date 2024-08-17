@@ -17,15 +17,4 @@ if(
 	}
 	tR = `(date::${theTimestamp.moment.format(datetimeFormat)})`;
 }
-
-tR += " ";
-
-/*TODO Use tp.obsidian to inspect where the cursor is and insert the log entry in the correct place.
- *
- * https://silentvoid13.github.io/Templater/internal-functions/internal-modules/obsidian-module.html
- *
- * - If the cursor is at line with only indentation and a bullet symbol, don't add another one.
- * - If the cursor is in the middle of text, add the bullet on the next line with same indentation.
- * - If the cursor is at an empty line, insert the bullet on current line.
- */
 _%>
