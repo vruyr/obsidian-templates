@@ -1,6 +1,7 @@
 <%*
 const nldates = await app.plugins.getPlugin("nldates-obsidian");
-const theTimestamp = nldates.parseTime((await tp.file.selection()) || "now");
+const theInput = (await tp.file.selection()) || "now";
+const theTimestamp = nldates.parseTime(theInput);
 
 if(
 	// If this is a daily journal page for the same date as the timestamp.
@@ -11,7 +12,11 @@ if(
 } else {
 	let datetimeFormat = "YYYY-MM-DD[T]HH:mm:ssZ";
 	const timePart = theTimestamp.moment.format("HH:mm:ss");
-	if(timePart === "12:00:00" || timePart === "00:00:00") {
+	if(
+		theInput === "today" ||
+		timePart === "12:00:00" ||
+		timePart === "00:00:00"
+	) {
 		// For some reason nldates set the time to noon by default.
 		datetimeFormat = "YYYY-MM-DD";
 	}
