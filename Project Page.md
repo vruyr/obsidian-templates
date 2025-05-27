@@ -10,6 +10,8 @@ await dv.view("Views/Project Page Info")
 
 ## Goals
 
-## Research
+## Tickets
+
+## Chronicle
 
 <% "" %>
