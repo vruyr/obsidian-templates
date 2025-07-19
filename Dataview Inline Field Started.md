@@ -1,1 +1,1 @@
-[started::<%tp.date.now("YYYY-MM-DD[T]HH:mm:ssZ")%>]
+<%"[started:" + ":" + tp.date.now("YYYY-MM-DD[T]HH:mm:ssZ") + "]"%>
